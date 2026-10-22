@@ -1,0 +1,91 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+
+* {
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', -apple-system, sans-serif;
+}
+
+body {
+    background-color: #ffecd1;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0 #000;
+    padding: 2.5rem;
+    width: 380px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+p {
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1.5rem;
+    border: 3px solid #000;
+    font-size: 1rem;
+    outline: none;
+    font-weight: bold;
+}
+
+button, .btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: #ffcc00;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0 #000;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.1s;
+    text-transform: uppercase;
+}
+
+button:active, .btn:active {
+    box-shadow: 0 0 0 #000;
+    transform: translate(4px, 4px);
+}
+
+.code-display {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin: 1.5rem 0;
+    padding: 1.5rem 1rem;
+    border: 3px dashed #000;
+    background: #e0f7fa;
+}
+
+.back-btn {
+    background: #ff5252;
+    margin-top: 1.5rem;
+}
+
+.tutorial {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    border: 3px solid #000;
+    padding: 12px;
+    background: #fff9c4;
+    font-weight: 500;
+}

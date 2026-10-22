@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlyzDevBot - Pair</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Nomor Telepon</h1>
+        <input type="text" id="number" placeholder="Contoh: 628123456789" />
+        <button id="get-code-btn">DAPATKAN KODE PAIRING</button>
+        <a href="/" class="btn back-btn">KEMBALI</a>
+    </div>
+    <script>
+        document.getElementById('get-code-btn').addEventListener('click', async () => {
+            const number = document.getElementById('number').value;
+            if (!number) return alert('Masukkan nomor telepon!');
+            
+            const btn = document.getElementById('get-code-btn');
+            btn.innerText = 'MEMPROSES...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/api/pair', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ number })
+                });
+                const data = await res.json();
+                if (data.code) {
+                    localStorage.setItem('pairCode', data.code);
+                    window.location.href = '/code.html';
+                } else {
+                    alert('Gagal mendapatkan kode!');
+                    btn.innerText = 'DAPATKAN KODE PAIRING';
+                    btn.disabled = false;
+                }
+            } catch (e) {
+                alert('Terjadi kesalahan koneksi!');
+                btn.innerText = 'DAPATKAN KODE PAIRING';
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

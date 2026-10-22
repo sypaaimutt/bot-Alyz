@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlyzDevBot - Code</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kode Anda</h1>
+        <div class="tutorial">
+            <b>Tutorial Perangkat Tertaut:</b><br><br>
+            1. Buka WhatsApp<br>
+            2. Pilih Perangkat Tertaut<br>
+            3. Tautkan Nomor Telepon
+        </div>
+        <div class="code-display" id="code-display">----</div>
+        <button id="copy-btn">SALIN KODE</button>
+        <a href="/pair.html" class="btn back-btn">KEMBALI</a>
+    </div>
+    <script>
+        const code = localStorage.getItem('pairCode');
+        const display = document.getElementById('code-display');
+        if (code) {
+            display.innerText = code;
+        } else {
+            display.innerText = 'KODE TIDAK ADA';
+        }
+
+        document.getElementById('copy-btn').addEventListener('click', () => {
+            if (code) {
+                navigator.clipboard.writeText(code);
+                alert('Kode disalin!');
+            }
+        });
+    </script>
+</body>
+</html>
