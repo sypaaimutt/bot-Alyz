@@ -1,0 +1,19 @@
+{
+  "name": "alyzdevbot",
+  "version": "1.0.0",
+  "description": "AlyzDevBot WhatsApp bot",
+  "main": "index.js",
+  "type": "commonjs",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "latest",
+    "axios": "^1.6.8",
+    "express": "^4.19.2",
+    "pino": "^8.20.0"
+  }
+}
